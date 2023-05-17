@@ -1,0 +1,13 @@
+.drawer-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.75rem;
+  font-size: 1.125rem;
+  padding: 2rem;
+  text-decoration: none;
+}
+.drawer-list:hover {
+  background-color: #9fa6de;
+  border-left: 4px solid #5E6EED;
+}/*# sourceMappingURL=drawerList.css.map */

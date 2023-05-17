@@ -1,0 +1,25 @@
+$primary-color:#1A55E3;
+$secondary-color:#FF0854;
+
+
+$supporting-color-green:#00D284;
+$supporting-color-lightblue:#0DCAF0;
+$supporting-color-purple:#5E6EED;
+$supporting-color-lightpurple:#9fa6de;
+
+
+
+.drawer-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.75rem;
+    font-size: 1.125rem;
+    padding: 2rem;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $supporting-color-lightpurple;
+        border-left: 4px solid $supporting-color-purple;
+    }
+}
