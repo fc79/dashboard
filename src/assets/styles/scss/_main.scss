@@ -1,0 +1,25 @@
+$primary-color:#1A55E3;
+$secondary-color:#FF0854;
+
+
+$supporting-color-green:#00D284;
+$supporting-color-lightblue:#0DCAF0;
+$supporting-color-purple:#5E6EED;
+$supporting-color-lightpurple:#9fa6de;
+
+$iranSansFont : IRANSansWeb;
+$font-14:14px;
+$font-16:16px;
+$font-18:18px;
+$fon-20:20px;
+
+.text{
+    font-family: $iranSansFont;
+    font-size: $font-16;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.submitButton{
+    margin-top: 15%;
+}

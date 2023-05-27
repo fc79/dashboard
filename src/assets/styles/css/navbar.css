@@ -1,0 +1,96 @@
+.menu {
+  position: relative;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 235px;
+  height: auto;
+  margin-top: 5%;
+  padding: auto;
+  border-bottom-color: rgb(0, 5, 10);
+  background-color: rgb(0, 5, 10);
+  background-repeat: repeat;
+  background-clip: content-box;
+}
+
+.dropbtn {
+  /* style the buttons*/
+  position: relative;
+  background-color: rgb(40, 40, 40);
+  color: darkorange;
+  padding: 10px;
+  margin-left: 0px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  font-family: monospace;
+  width: 235px;
+}
+
+.dropdown {
+  /*initialize the revealing sliding menu*/
+  position: absolute;
+  margin: auto;
+  padding: 10px;
+  display: block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dropdown-menu .dropdown-content {
+  display: block;
+  margin-right: 0px;
+  padding: 0px 0px 0px 0px;
+  background-color: black;
+  transform: translateX(-100%);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transition: transform 1s;
+}
+
+.dropdown-content a {
+  display: block;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: darkorange;
+  color: #000000;
+}
+
+.dropdown1:hover .dropdown-content {
+  transform: translateX(0%);
+}
+
+.dropdown1:hover .dropdown-menu {
+  position: absolute;
+  transition: 0.3s;
+  margin-bottom: 100px;
+}
+
+.dropdown1:hover .dropbtn {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  transition: 0.3s;
+}
+
+.dropdown2:hover .dropdown-content {
+  position: relative;
+  transform: translateY(0%);
+}
+
+.dropdown2:hover .dropbtn {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  transition: 0.3s;
+}
+
+.dropdown1 {
+  position: relative;
+}/*# sourceMappingURL=navbar.css.map */

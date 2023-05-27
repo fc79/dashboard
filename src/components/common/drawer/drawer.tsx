@@ -12,41 +12,47 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { drawerData } from './drawerData';
-import Collapse from '@mui/material/Collapse';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
 import SubMenu from './drawerSubmenu';
+import axios from 'axios';
+import BasrURL from '../../../utils/constants/urls';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { authActions } from '../../../store/index';
+import { useDispatch } from 'react-redux';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Avatar from '@mui/material/Avatar';
+import Container from '@mui/material/Container';
+import AdbIcon from '@mui/icons-material/Adb';
 
-const drawerWidth = 240;
 
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
-  open?: boolean;
-}>(({ theme, open }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  marginRight: -drawerWidth,
-  ...(open && {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginRight: 0,
-  }),
-}));
+const token = localStorage.getItem('token')
 
+console.log(token)
+const drawerWidth = 200;
+
+// const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
+//   open?: boolean;
+// }>(({ theme, open }) => ({
+//   flexGrow: 1,
+//   padding: theme.spacing(3),
+//   transition: theme.transitions.create('margin', {
+//     easing: theme.transitions.easing.sharp,
+//     duration: theme.transitions.duration.leavingScreen,
+//   }),
+//   marginRight: -drawerWidth,
+//   ...(open && {
+//     transition: theme.transitions.create('margin', {
+//       easing: theme.transitions.easing.easeOut,
+//       duration: theme.transitions.duration.enteringScreen,
+//     }),
+//     marginRight: 0,
+//   }),
+// }));
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
-
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
@@ -75,41 +81,135 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 export default function DrawerPersistant() {
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
   const [listChildren,setListChildren] = React.useState(true)
+  // const open = useSelector((state:any) => state.appStates.drawerIsOpen)
+  const theme = useTheme();
+  const firstname = useSelector((state:any) => state.auth.firstname)
+  const lastname = useSelector((state:any) => state.auth.lastname)
+  const dispatch = useDispatch();
+
+  const [open, setOpen] = React.useState(false);
+console.log(lastname);
+console.log("token",token);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
+  const logOutUrl = BasrURL + 'api/v1/logout'
+
+  const navigate = useNavigate();
 
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const handleListChildrenClicked = () =>{
-    setListChildren(!listChildren)
-  }
+    
+  const options = {
+    method: 'POST',
+    url: logOutUrl,
+    headers: {
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+  };
+  const logOutButton = () =>{
 
+    axios
+      .request(options)
+      .then(function ({ data }: { data: Response }) {
+        console.log(data);
+        
+        dispatch(
+          authActions.logout()
+        );
+        navigate('/login');
+      })
+      .catch(function (error: any) {
+        console.error(error);
+      });  
+  } 
+  
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const openMenu = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+return(
+  <Box sx={{ flexGrow: 1 }}>
+  <CssBaseline />
 
+  <AppBar position="static" className='text'>
+      <Container maxWidth="xl" >
+        <Toolbar variant="dense" disableGutters sx={{marginLeft:{xl:"-10%"},marginRight:{xl:"-10%"}}} >
+          <Box sx={{ flexGrow: 1,display: { xs: 'flex' } }}>
+          <IconButton onClick={handleClick} sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              </IconButton>
+              <Menu
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={openMenu}
+                  onClose={handleClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
 
+                  }}
+                  
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+          
 
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
-          <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div">
+              >
+        <MenuItem onClick={handleClose}>
+          <div>
+            {firstname} {lastname}
+          </div>
+        </MenuItem>
+        <MenuItem  sx={{display:'flex',justifyContent:'center'}} onClick={logOutButton}>
+          <div >
+            خروج
+            </div>
+        </MenuItem>
+       
+      </Menu>
+          </Box>
+         
+          <Box sx={{ flexGrow: 0,display: { md: 'flex' } }}>
+          
+            {/* <AdbIcon sx={{ display: { md: 'flex', xs:'none' }, mr: 1 }} /> */}
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
+              mr: 2,
+              display: { md: 'flex',xs:'none' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            لوگو
           </Typography>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            sx={{ ...(open && { display: 'none' }) }}
-          >
-            <MenuIcon />
-          </IconButton>
+              size="large"
+              aria-haspopup="true"
+              onClick={handleDrawerOpen}
+              color="inherit"
+              sx={{fontFamily:'IRANSansWeb'}}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
         </Toolbar>
-      </AppBar>
+      </Container>
+    </AppBar>
       <Drawer
         sx={{
           width: drawerWidth,
@@ -123,8 +223,8 @@ export default function DrawerPersistant() {
         open={open}
       >
         <DrawerHeader>
-            لوگو
-          <IconButton onClick={handleDrawerClose} sx={{ ml: 2 }}>
+          لوگو
+          <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -137,6 +237,7 @@ export default function DrawerPersistant() {
           })}
         </List>
       </Drawer>
+   
     </Box>
   );
 }

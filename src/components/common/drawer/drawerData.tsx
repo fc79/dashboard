@@ -28,7 +28,7 @@ export const drawerData:SidebarItem[] = [
 
   },
   {
-    key: '/وضعیت',
+    key: '/status',
     label: 'وضعیت',
     icon:<PeopleIcon/>,
     iconOpened: <ExpandLess />,
@@ -36,8 +36,8 @@ export const drawerData:SidebarItem[] = [
    
     items: [
         {
-          key: "/ببئب",
-          label:'kkg',
+          key: "/submenu",
+          label:'زیر',
           icon: <PeopleIcon />,
             
         }

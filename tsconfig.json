@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
     "target": "es5",
     "lib": [
       "dom",
@@ -22,5 +24,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/components/common/header/header.tsx"  ]
 }
