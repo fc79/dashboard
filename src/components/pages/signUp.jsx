@@ -5,7 +5,7 @@ import { TextField } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../store/index';
+// import { authActions } from '../../store/index';
 import BaseUrl from "../../utils/constants/urls"
 import {
   ThemeProvider,
@@ -88,11 +88,11 @@ return(
             console.log(res);
             if (res.data.status === 200) {
               
-              dispatch(
-                authActions.signUp({
-                  signUpData: values,
-                })
-              );
+              // dispatch(
+              //   authActions.signUp({
+              //     signUpData: values,
+              //   })
+              // );
               navigate('/otp-register');
               
             }

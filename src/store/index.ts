@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authSlice from './auth';
 import appStatesSlice from './appStates';
 import storage from "redux-persist/lib/storage";
 import { combineReducers } from '@reduxjs/toolkit';
 import {persistReducer} from "redux-persist";
+import {usersAPI} from "../api/apiSlice";
+import { setupListeners } from '@reduxjs/toolkit/query'
 
 export const config = {
     key: 'root',
@@ -11,8 +12,8 @@ export const config = {
     blacklist: ['extras'],
 };
 const combinedReducers = combineReducers({
-  auth: authSlice.reducer,
-  appStates:appStatesSlice.reducer
+  [usersAPI.reducerPath]: usersAPI.reducer,
+
 })
 
 const persisted = persistReducer(config, combinedReducers);
@@ -20,11 +21,8 @@ const persisted = persistReducer(config, combinedReducers);
 export const store = configureStore({
 	reducer: persisted,
   middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware({
-    serializableCheck: false,
-  }),
+  getDefaultMiddleware().concat(usersAPI.middleware)
 
 })
-export const authActions = authSlice.actions;
-export const appStatesActions = appStatesSlice.actions;
-export default store;
+setupListeners(store.dispatch)
+

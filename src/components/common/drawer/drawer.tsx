@@ -18,7 +18,6 @@ import axios from 'axios';
 import BasrURL from '../../../utils/constants/urls';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { authActions } from '../../../store/index';
 import { useDispatch } from 'react-redux';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -84,12 +83,11 @@ export default function DrawerPersistant() {
   const [listChildren,setListChildren] = React.useState(true)
   // const open = useSelector((state:any) => state.appStates.drawerIsOpen)
   const theme = useTheme();
-  const firstname = useSelector((state:any) => state.auth.firstname)
-  const lastname = useSelector((state:any) => state.auth.lastname)
+  // const firstname = useSelector((state:any) => state.auth.firstname)
+  // const lastname = useSelector((state:any) => state.auth.lastname)
   const dispatch = useDispatch();
 
   const [open, setOpen] = React.useState(false);
-console.log(lastname);
 console.log("token",token);
 
   const handleDrawerOpen = () => {
@@ -117,10 +115,6 @@ console.log("token",token);
       .request(options)
       .then(function ({ data }: { data: Response }) {
         console.log(data);
-        
-        dispatch(
-          authActions.logout()
-        );
         navigate('/login');
       })
       .catch(function (error: any) {
@@ -166,7 +160,7 @@ return(
               >
         <MenuItem onClick={handleClose}>
           <div>
-            {firstname} {lastname}
+            {/* {firstname} {lastname} */}
           </div>
         </MenuItem>
         <MenuItem  sx={{display:'flex',justifyContent:'center'}} onClick={logOutButton}>

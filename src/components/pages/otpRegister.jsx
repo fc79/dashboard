@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import BaseUrl from "../../utils/constants/urls"
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../store';
 import Swal from 'sweetalert2'
 
 const otpSendUrlSignUp = BaseUrl+'api/v1/otp/register';
@@ -70,15 +69,15 @@ const  Otp = ()=> {
           console.log("here");
           if (res.data.status === 200) {
             localStorage.setItem('token',res.data.data.token)
-            dispatch(
-              authActions.login({
-                token: res.data.data.token,
-                firstname: res.data.data.user.firstname,
-                lastname: res.data.data.user.lastname,
-                mobile: res.data.data.user.mobile,
-              })
-            );
-            dispatch(authActions.setToken())
+            // dispatch(
+            //   authActions.login({
+            //     token: res.data.data.token,
+            //     firstname: res.data.data.user.firstname,
+            //     lastname: res.data.data.user.lastname,
+            //     mobile: res.data.data.user.mobile,
+            //   })
+            // );
+            // dispatch(authActions.setToken())
             // navigate(0)
             navigate('/submenu')
 

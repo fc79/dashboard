@@ -5,7 +5,6 @@ import { TextField } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../store/index';
 import Swal from 'sweetalert2'
 import BaseUrl from "../../utils/constants/urls";
 import { WithStyles } from '@mui/styles';
@@ -18,7 +17,6 @@ import {
 const Login = ()=>{
     const [errorPhone,setErrorPhone] = useState("");
     const navigate = useNavigate();
-    const loginUrl = BaseUrl+'api/v1/login';
     const dispatch = useDispatch();
     const rtlTheme = createTheme({ direction: "rtl" });
     const [overAttempt,setOverAttempt] = useState(false);
@@ -42,50 +40,8 @@ return(
           mobile:""
         }}
         onSubmit={values => {
-          axios({
-            method: 'POST',
-            mode:'no-cors',
-            url: loginUrl,
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-              'Origin': '*',
-              'Access-Control-Allow-Headers': '*',
-              'Access-Control-Allow-Origin': '*',
-            },
-            withCredentials:false,
-            credentials:'same-origin',
-            data:JSON.stringify(values),
-          })
-            .then((res) => {
-              if (res.data.status === 200) {
-                dispatch(
-                  authActions.login({
-                    loginData: values,
-                  })
-                );
-                
-                navigate('/otp-login');
-                
-              }
-            })
-            .catch((err) => {
-             if(err.message === 'Request failed with status code 429')
-             {
-              setOverAttempt(true)
-             }
-             if (err.response.status === 500 )
-             {
-              Swal.fire({
-                 icon: 'error',
-                 title: '!ای وای',
-                 text: '!شما ثبت نام نکرده اید',
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'باشه'
-               })
-             }
-             console.log("error",err);
-            });
+          navigate("/bank")
+ 
         }}
       >
         {({}) => (

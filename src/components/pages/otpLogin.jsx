@@ -147,15 +147,15 @@ const  OtpLogin = ()=> {
               console.log("res");
               if (res.data.status === 200) {
                 localStorage.setItem('token',res.data.data.token)
-                dispatch(
-                  authActions.login({
-                    token: res.data.data.token,
-                    firstname: res.data.data.user.firstname,
-                    lastname: res.data.data.user.lastname,
-                    mobile: res.data.data.user.mobile,
-                  })
-                );
-                dispatch(authActions.setToken())
+                // dispatch(
+                //   authActions.login({
+                //     token: res.data.data.token,
+                //     firstname: res.data.data.user.firstname,
+                //     lastname: res.data.data.user.lastname,
+                //     mobile: res.data.data.user.mobile,
+                //   })
+                // );
+                // dispatch(authActions.setToken())
                 navigate('/submenu')
     
                 Swal.fire({

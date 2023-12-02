@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../assets/styles/css/navbar.css"
 
-function Bank(){
+function OverLay(){
     return(
     <div className="menu">
   <div className="dropdown">
@@ -21,4 +21,4 @@ function Bank(){
     </div>
     )
 }
-export default Bank
+export default OverLay
