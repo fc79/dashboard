@@ -1,4 +1,4 @@
-.menu {
+.overlay {
     position: relative;
     top: 0px;
     display: flex;
@@ -11,7 +11,7 @@
     background-color: rgba(0, 5, 10, 1.00);
     background-repeat: repeat;
     background-clip: content-box;
-  }
+  
   
   .dropbtn {
     /* style the buttons*/
@@ -94,3 +94,4 @@
   .dropdown1 {
     position: relative;
   }
+}

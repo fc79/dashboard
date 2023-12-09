@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import { Formik, Form, Field } from 'formik';
-import "../../assets/styles/css/login.css"
 import { TextField } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -137,11 +136,9 @@ return(
                     sx={{
                       "& input::placeholder": {
                         fontSize: "16px",
-                        fontFamily:"IRANSansWeb"
                       },
                       "& input":{
                         fontSize:"18px",
-                        fontFamily:"IRANSansWeb"
 
                       }
                       ,
@@ -162,11 +159,9 @@ return(
                     sx={{
                       "& input::placeholder": {
                         fontSize: "16px",
-                        fontFamily:"IRANSansWeb"
                       },
                       "& input":{
                         fontSize:"18px",
-                        fontFamily:"IRANSansWeb"
 
                       },
                       
@@ -186,13 +181,10 @@ return(
                     sx={{
                       "& input::placeholder": {
                         fontSize: "16px",
-                        fontFamily:"IRANSansWeb"
                       }
                       ,
                       "& input":{
-                        fontSize:"18px",
-                        fontFamily:"IRANSansWeb",
-                    
+                        fontSize:"18px",                    
                       }
                       
                   }}

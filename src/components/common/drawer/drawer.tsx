@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme, styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
@@ -24,11 +24,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
 import AdbIcon from '@mui/icons-material/Adb';
-
+import StarIcon from '@mui/icons-material/Star';
 
 const token = localStorage.getItem('token')
-
-console.log(token)
 const drawerWidth = 200;
 
 // const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
@@ -82,7 +80,6 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 export default function DrawerPersistant() {
   const [listChildren,setListChildren] = React.useState(true)
   // const open = useSelector((state:any) => state.appStates.drawerIsOpen)
-  const theme = useTheme();
   // const firstname = useSelector((state:any) => state.auth.firstname)
   // const lastname = useSelector((state:any) => state.auth.lastname)
   const dispatch = useDispatch();
@@ -130,7 +127,15 @@ console.log("token",token);
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const theme = createTheme({
+    direction: "ltr",
+    typography: {
+      fontFamily:
+        'Vazir',
+    }
+  });
 return(
+  <ThemeProvider theme={theme}>
   <Box sx={{ flexGrow: 1 }}>
   <CssBaseline />
 
@@ -172,32 +177,14 @@ return(
       </Menu>
           </Box>
          
-          <Box sx={{ flexGrow: 0,display: { md: 'flex' } }}>
-          
-            {/* <AdbIcon sx={{ display: { md: 'flex', xs:'none' }, mr: 1 }} /> */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              mr: 2,
-              display: { md: 'flex',xs:'none' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            لوگو
-          </Typography>
+          <Box sx={{ flexGrow: 0,display: { md: 'flex' } }}>         
           <IconButton
               size="large"
               aria-haspopup="true"
               onClick={handleDrawerOpen}
               color="inherit"
-              sx={{fontFamily:'IRANSansWeb'}}
             >
+              <StarIcon />
               <MenuIcon />
             </IconButton>
           </Box>
@@ -217,7 +204,7 @@ return(
         open={open}
       >
         <DrawerHeader>
-          لوگو
+          <StarIcon />
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
@@ -233,5 +220,6 @@ return(
       </Drawer>
    
     </Box>
+    </ThemeProvider>
   );
 }

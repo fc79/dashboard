@@ -1,7 +1,4 @@
 @use "./main" ;
-body{
-    font-family: main.$iranSansFont;
-}
 .parent-list{
     &:hover {
         // background-color: main.$supporting-color-lightpurple;

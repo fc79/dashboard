@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import SignUp from './components/pages/signUp';
 import OverLay from "./components/pages/overlay";
 // import Users from './components/pages/users';
@@ -37,6 +36,10 @@ function App() {
             <Route
               path="/drawer"
               element={<DrawerPersistant/>}
+            />
+            <Route
+              path="/toggle"
+              element={<LanguageToggle/>}
             />
             <Route
               path="/dashboard"

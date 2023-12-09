@@ -2,7 +2,6 @@ import React, { FC, useState } from 'react';
 import { SidebarItem } from '../../../interface or models/sideBarItems';
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
-import "../../../assets/styles/css/drawerList.css"
 
 type SidebarLinkProps = {
     item: SidebarItem;
@@ -30,7 +29,7 @@ const SubMenu: FC<SidebarLinkProps> = ({ item}) => {
                   item.key === location.pathname ? "item-selected": '' } >
           <ListItemButton className="list-items" onClick={showSubnav}>
             <div>{item?.items && subnav ? item?.iconOpened : item?.iconClosed}</div>
-            <ListItemText primaryTypographyProps={{fontSize: '18px',fontFamily:'IranSansWeb'}} 
+            <ListItemText primaryTypographyProps={{fontSize: '18px'}} 
              className='list-item-text' >
                 {item.label}
             </ListItemText>
@@ -44,7 +43,7 @@ const SubMenu: FC<SidebarLinkProps> = ({ item}) => {
                 return (
                     <ListItem onClick={(e)=>onItemClick(subnavItem.key)}  >
                     <ListItemButton >
-                        <ListItemText primaryTypographyProps={{fontSize: '16px',fontFamily:'IranSansWeb'}}  sx={{pl:7}} className={
+                        <ListItemText primaryTypographyProps={{fontSize: '16px'}}  sx={{pl:7}} className={
                         subnavItem.key === location.pathname ? "item-selected": `${subnavItem.key}` }>
                           {subnavItem.label}
                       </ListItemText>

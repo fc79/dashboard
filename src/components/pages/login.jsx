@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import { Formik, Form, Field } from 'formik';
-import "../../assets/styles/css/login.css"
 import { TextField } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -39,6 +38,7 @@ return(
         initialValues={{
           mobile:""
         }}
+        className="login"
         onSubmit={values => {
           navigate("/bank")
  
@@ -47,7 +47,7 @@ return(
         {({}) => (
        
   
-         <div className="login">
+         <div>
          <div className="form">
   
           <span >ورود</span>
@@ -65,13 +65,11 @@ return(
                       sx={{
                         "& input::placeholder": {
                           fontSize: "16px",
-                          fontFamily:"IRANSansWeb",
                           textAlign:'right'
                         }
                         ,
                         "& input":{
                           fontSize:"18px",
-                          fontFamily:"IRANSansWeb",
                       
                         }
                         

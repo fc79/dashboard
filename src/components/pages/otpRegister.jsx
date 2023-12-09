@@ -1,8 +1,6 @@
 import React,{useState,useEffect,useRef} from 'react'
-import "../../assets/styles/css/login.css";
 import { useNavigate } from 'react-router-dom';
 import { TextField } from '@mui/material';
-import "../../assets/styles/css/login.css"
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import BaseUrl from "../../utils/constants/urls"

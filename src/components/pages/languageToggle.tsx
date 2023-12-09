@@ -10,7 +10,7 @@
      }
 
      return(
-         <div className="" style={{margin:"10%"}}>
+         <div className="language-toggle" style={{margin:"10%"}}>
          <select className="custom-select" style={{width: 200}} onChange={onClickLanguageChange}>
          <option value="fa" >فارسی</option>
 
@@ -25,4 +25,3 @@
          </div>
      );
  }
-export{}

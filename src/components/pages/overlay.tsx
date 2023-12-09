@@ -1,9 +1,8 @@
 import React from 'react';
-import "../../assets/styles/css/navbar.css"
 
 function OverLay(){
     return(
-    <div className="menu">
+    <div className="overlay">
   <div className="dropdown">
     <div className="dropdown1">
       <button className="">DIV 1</button>

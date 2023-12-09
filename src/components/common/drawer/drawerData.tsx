@@ -6,6 +6,7 @@ import Face5Icon from '@mui/icons-material/Face5';
 import SignalWifiStatusbarNullIcon from '@mui/icons-material/SignalWifiStatusbarNull';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import TableRowsIcon from '@mui/icons-material/TableRows';
 import { SidebarItem } from '../../../interface or models/sideBarItems';
 export const drawerData:SidebarItem[] = [
   {
@@ -47,6 +48,11 @@ export const drawerData:SidebarItem[] = [
     key: '/toggle',
     label: 'تغییر زبان',
     icon:<ToggleOffIcon/>,
+  },
+  {
+    key: '/big-table',
+    label: 'جدول',
+    icon:<TableRowsIcon/>,
   },
   
 ];

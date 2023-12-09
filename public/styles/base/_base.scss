@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "vazir";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../../fonts/Vazir-Medium-FD_p30download.com.ttf)
+  }
+  html,
+body {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: 'Vazir' !important;
+  background-color: $bgWhite !important;
+  direction: ltr !important;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+&::-webkit-scrollbar {
+  display: none;
+}
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+
+
+}

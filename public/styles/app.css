@@ -1,0 +1,222 @@
+.submitButton {
+  margin-top: 15%;
+}
+
+.list-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.list-item-text {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.list-item-icon {
+  padding-left: 20%;
+}
+
+.item-selected {
+  color: #1A55E3;
+}
+
+.item-not {
+  color: red;
+}
+
+.login {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  border-radius: 10px;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form input:focus {
+  background: #dbdbdb;
+}
+
+.form button {
+  text-transform: uppercase;
+  outline: 0;
+  background: #4b6cb7;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button:active {
+  background: #395591;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form span {
+  font-size: 40px;
+  color: #4b6cb7;
+  margin-bottom: 25px;
+  display: block;
+}
+
+.error {
+  margin: 0 0 10px 10px;
+  text-align: right;
+  font-size: 10px;
+  color: red;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.form-input {
+  border: 2px solid;
+  border-right-color: #395591;
+  text-align: right;
+}
+
+.time-left {
+  margin: 7% 0 7% 0;
+}
+
+.submitButton {
+  margin-top: 15%;
+}
+
+.overlay {
+  position: relative;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 235px;
+  height: auto;
+  margin-top: 5%;
+  padding: auto;
+  border-bottom-color: rgb(0, 5, 10);
+  background-color: rgb(0, 5, 10);
+  background-repeat: repeat;
+  background-clip: content-box;
+}
+.overlay .dropbtn {
+  /* style the buttons*/
+  position: relative;
+  background-color: rgb(40, 40, 40);
+  color: darkorange;
+  padding: 10px;
+  margin-left: 0px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  font-family: monospace;
+  width: 235px;
+}
+.overlay .dropdown {
+  /*initialize the revealing sliding menu*/
+  position: absolute;
+  margin: auto;
+  padding: 10px;
+  display: block;
+}
+.overlay .dropdown-menu {
+  position: absolute;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.overlay .dropdown-menu .dropdown-content {
+  display: block;
+  margin-right: 0px;
+  padding: 0px 0px 0px 0px;
+  background-color: black;
+  transform: translateX(-100%);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transition: transform 1s;
+}
+.overlay .dropdown-content a {
+  display: block;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+}
+.overlay .dropdown-menu a:hover {
+  background-color: darkorange;
+  color: #000000;
+}
+.overlay .dropdown1:hover .dropdown-content {
+  transform: translateX(0%);
+}
+.overlay .dropdown1:hover .dropdown-menu {
+  position: absolute;
+  transition: 0.3s;
+  margin-bottom: 100px;
+}
+.overlay .dropdown1:hover .dropbtn {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  transition: 0.3s;
+}
+.overlay .dropdown2:hover .dropdown-content {
+  position: relative;
+  transform: translateY(0%);
+}
+.overlay .dropdown2:hover .dropbtn {
+  background-color: rgb(65, 65, 65);
+  color: white;
+  transition: 0.3s;
+}
+.overlay .dropdown1 {
+  position: relative;
+}
+
+@font-face {
+  font-family: "vazir";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../../fonts/Vazir-Medium-FD_p30download.com.ttf);
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: "Vazir" !important;
+  background-color: rgb(248, 255, 255) !important;
+  direction: ltr !important;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}/*# sourceMappingURL=app.css.map */
