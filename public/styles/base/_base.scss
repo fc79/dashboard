@@ -22,3 +22,12 @@ scrollbar-width: none;  /* Firefox */
 
 
 }
+.ReactVirtualized__Table__rowColumn{
+    flex: 0px !important;
+}
+.ReactVirtualized__Table__headerRow{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}

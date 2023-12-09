@@ -34,9 +34,8 @@ function BigTable() {
                      width={500}
                      height={700}
                      rowHeight={50}
-                     rowWidth={200}
                      rowCount={items.length}
-                     rowGetter={({ index }) =>items[index]}
+                     rowGetter={({ index }) =>items[index+1]}
                   >
                   <Column
                      label='Id'

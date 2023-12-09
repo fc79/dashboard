@@ -40,7 +40,7 @@
   background: #FFFFFF;
   border-radius: 10px;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 100px auto 100px;
   padding: 45px;
   text-align: center;
 }
@@ -219,4 +219,15 @@ body {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
+}
+
+.ReactVirtualized__Table__rowColumn {
+  flex: 0px !important;
+}
+
+.ReactVirtualized__Table__headerRow {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
 }/*# sourceMappingURL=app.css.map */
