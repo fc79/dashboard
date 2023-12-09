@@ -206,6 +206,14 @@
   align-items: center;
 }
 
+.bank {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
 @font-face {
   font-family: "vazir";
   font-style: normal;
