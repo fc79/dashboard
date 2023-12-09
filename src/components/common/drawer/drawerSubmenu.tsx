@@ -41,7 +41,7 @@ const SubMenu: FC<SidebarLinkProps> = ({ item}) => {
           {subnav &&
             item?.items?.map((subnavItem, index) => {
                 return (
-                    <ListItem onClick={(e)=>onItemClick(subnavItem.key)}  >
+                    <ListItem sx={{display:"flex", justifyContent:"space-between", pl:0}} onClick={(e)=>onItemClick(subnavItem.key)}  >
                     <ListItemButton >
                         <ListItemText primaryTypographyProps={{fontSize: '16px'}}  sx={{pl:7}} className={
                         subnavItem.key === location.pathname ? "item-selected": `${subnavItem.key}` }>
