@@ -9,7 +9,7 @@ import {PersistGate} from "redux-persist/integration/react";
 import "./lib/i18n/i18n"
 import { BrowserRouter } from 'react-router-dom'
 import {persistStore} from "redux-persist";
-import {store} from "./store/index";
+import {store} from "./redux/store"
 import "./utils/langs/eot/IRANSansWeb(FaNum).eot";
 import "./utils/langs/ttf/IRANSansWeb(FaNum).ttf";
 import "./utils/langs/woff/IRANSansWeb(FaNum).woff";
