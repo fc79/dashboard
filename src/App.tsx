@@ -16,6 +16,7 @@ import Users from './components/pages/users';
 import BigTable from './components/pages/bigTable';
 
 import "./utils/langs/ttf/IRANSansWeb(FaNum).ttf"
+import Bank from './components/pages/bank';
 function App() {
   const dispatch = useDispatch();
   // const isAuthenticated = useSelector((state:any) => state.auth.isAuthenticated);
@@ -47,7 +48,7 @@ function App() {
             />
             <Route
               path="/bank"
-              element={<OverLay/>}
+              element={<Bank/>}
             />
             <Route
               path="/language-toggle"

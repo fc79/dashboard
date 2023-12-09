@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import BaseUrl from "../../utils/constants/urls"
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../store';
 import Swal from 'sweetalert2'
 import { Formik, Form, Field } from 'formik';
 

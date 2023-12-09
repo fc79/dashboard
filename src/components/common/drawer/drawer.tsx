@@ -85,8 +85,6 @@ export default function DrawerPersistant() {
   const dispatch = useDispatch();
 
   const [open, setOpen] = React.useState(false);
-console.log("token",token);
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
