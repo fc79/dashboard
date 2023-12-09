@@ -66,6 +66,7 @@ return(
         lastname: "",
         mobile:""
       }}
+      className="login"
       onSubmit={values => {
        
         axios({
@@ -102,27 +103,14 @@ return(
             setOverAttempt(true);
             
            }
-           if(err.message === 'Request failed with status code 422');
-            {
-              Swal.fire({
-                icon: 'error',
-                title: '!ای وای',
-                text: 'شماره همراه تکراری است!',
-               confirmButtonColor: '#3085d6',
-               confirmButtonText: 'باشه'
-              })
-            }
            
           });
       }}
     >
       {({}) => (
-     
-
-       <div className="login">
        <div className="form">
 
-        <span>ثبت نام</span>
+        <span>ثبت‌نام</span>
         <Form>
           {overAttempt ? <div>لطفا پس از 2 دقیقه دوباره تلاش کنید</div>
           :
@@ -136,9 +124,13 @@ return(
                     sx={{
                       "& input::placeholder": {
                         fontSize: "16px",
+                        textAlign:"right",
+
                       },
                       "& input":{
                         fontSize:"18px",
+                        direction:"rtl"
+
 
                       }
                       ,
@@ -159,9 +151,13 @@ return(
                     sx={{
                       "& input::placeholder": {
                         fontSize: "16px",
+                        textAlign:"right",
+
                       },
                       "& input":{
                         fontSize:"18px",
+                        direction:"rtl"
+
 
                       },
                       
@@ -181,6 +177,7 @@ return(
                     sx={{
                       "& input::placeholder": {
                         fontSize: "16px",
+                        textAlign:"right"
                       }
                       ,
                       "& input":{
@@ -195,12 +192,11 @@ return(
             </Field>
           <div className='error'>{errorPhone}</div>
 
-          <button type="submit" className='submitButton'>ثبت نام</button>
+          <button type="submit" className='submitButton'>ثبت‌نام</button>
           </>
           }
         </Form>
 
-        </div>
         </div>
       )}
     </Formik>

@@ -198,6 +198,14 @@
   position: relative;
 }
 
+.rtk-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 @font-face {
   font-family: "vazir";
   font-style: normal;

@@ -7,7 +7,7 @@
  function Users() {
      const {data, error, isLoading, isFetching, isSuccess} = useUsersQuery({id:1});    
    return (
-     <div>
+     <div className='rtk-container'>
          <h2>RTK fetching data</h2>
        {isLoading && <h2>Loading</h2>}
        {isFetching && <h2>Fetching</h2>}
