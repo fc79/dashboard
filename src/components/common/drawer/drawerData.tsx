@@ -8,6 +8,8 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import TableRowsIcon from '@mui/icons-material/TableRows';
 import { SidebarItem } from '../../../interface or models/sideBarItems';
+import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
+import BubbleChartIcon from '@mui/icons-material/BubbleChart';
 export const drawerData:SidebarItem[] = [
   {
     key: '/bank',
@@ -31,15 +33,15 @@ export const drawerData:SidebarItem[] = [
   {
     key: '/status',
     label: 'وضعیت',
-    icon:<PeopleIcon/>,
+    icon:<BubbleChartIcon />,
     iconOpened: <ExpandLess />,
     iconClosed:<ExpandMore />,
    
     items: [
         {
           key: "/submenu",
-          label:'زیر',
-          icon: <PeopleIcon />,
+          label:'کامپوننت‌ها',
+          icon: <DragIndicatorIcon />,
             
         }
     ]
