@@ -6,5 +6,7 @@
 #### 3. redux, redux-toolkit, react-persist & RTK query
 #### 4. MUI
 #### 5. SweetAlert
+#### 6. Yup
+#### 7. React Virtualized
 
 
